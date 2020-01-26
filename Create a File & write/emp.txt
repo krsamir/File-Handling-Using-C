@@ -1,0 +1,3 @@
+Name = Samir
+Age = 25
+Salary = 55000.00

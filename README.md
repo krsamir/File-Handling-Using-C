@@ -23,8 +23,8 @@ Function &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;description<br>
 ### Opening a File or Creating a File<br>
 The **fopen()** function is used to create a new file or to open an existing file.<br>
 ### General Syntax:<br>
-** *fp = FILE *fopen(const char *filename, const char *mode);**<br>
-Here, *fp is the FILE pointer (FILE *fp), which will hold the reference to the opened(or created) file.<br>
+`*fp = FILE *fopen(const char *filename, const char *mode);`<br>
+Here, `*fp` is the FILE pointer (FILE *fp), which will hold the reference to the opened(or created) file.<br>
 
 **filename** is the name of the file to be opened and **mode** specifies the purpose of opening the file.
 Mode can be of following types,<br>

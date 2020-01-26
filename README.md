@@ -1,8 +1,8 @@
 # File-Handling-Using-C
-A file represents a sequence of bytes on the disk where a group of related data is stored. File is
-created for permanent storage of data. It is a ready made structure. 
+A file represents a sequence of bytes on the disk where a group of related data is stored. 
+File is created for permanent storage of data. It is a ready made structure. 
 <br>In C language, we use a structure pointer of file type to declare a file.
-<br>FILE *fp;<br>
+<br>`FILE *fp;`<br>
 C provides a number of functions that helps to perform basic file operations. Following are the functions<br>
 Function &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;description<br>
 ### `fopen()`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: create a new file or open a existing file<br>
@@ -20,10 +20,10 @@ Function &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;description<br>
 
 ***
 
-Opening a File or Creating a File<br>
+### Opening a File or Creating a File<br>
 The **fopen()** function is used to create a new file or to open an existing file.<br>
 ### General Syntax:<br>
-***fp = FILE *fopen(const char *filename, const char *mode);**<br>
+** *fp = FILE *fopen(const char *filename, const char *mode);**<br>
 Here, *fp is the FILE pointer (FILE *fp), which will hold the reference to the opened(or created) file.<br>
 
 **filename** is the name of the file to be opened and **mode** specifies the purpose of opening the file.
@@ -105,3 +105,39 @@ while(!feof(q));<br>
 In this program, we have created two FILE pointers and both are refering to the same file but in different modes.<br>
 `fprintf()` function directly writes into the file, while `fscanf()` reads from the file, which can then be printed on 
 the console using standard `printf()` function.
+
+
+***
+**Difference between Append and Write Mode**<br>
+Write (w) mode and Append (a) mode, while opening a file are almost the same. Both are used to write in a file. 
+In both the modes, new file is created if it doesn't exists already.<br><br>
+
+The only difference they have is, when you `open` a file in the `write` mode, the file is reset, resulting<br>
+in deletion of any data already present in the file. While in `append` mode this will not happen.<br>
+Append mode is used to append or add data to the existing data of file(if any). Hence, when you<br>
+open a file in Append(a) mode, the cursor is positioned at the end of the present data in the file.<br>
+
+***
+### Reading and Writing in a Binary File<br>
+A Binary file is similar to a text file, but it contains only large numerical data. The Opening modes are mentioned 
+in the table for opening modes above.<br><br>
+
+`fread()` and `fwrite()` functions are used to read and write is a `binary file`.<br><br>
+
+fwrite(`data-element-to-be-written`, `size_of_elements`, `number_of_elements`,`pointer-to-file`);<br>
+fread() is also used in the same way, with the same arguments like fwrite() function.<br>
+Below mentioned is a simple example of writing into a binary file<br><br>
+
+const char *mytext = "The quick brown fox jumps over the lazy dog";<br>
+FILE *bfp= fopen("test.txt", "wb");<br>
+if (bfp)<br>
+{<br>
+fwrite(mytext, sizeof(char), strlen(mytext), bfp);<br>
+fclose(bfp);<br>
+}<br>
+
+***
+### `fseek()`, `ftell()` and `rewind()` functions<br>
+* `fseek()`: It is used to move the reading control to different positions using fseek function.
+* `ftell()`: It tells the byte location of current position of cursor in file pointer.
+* `rewind()`: It moves the control to beginning of the file.

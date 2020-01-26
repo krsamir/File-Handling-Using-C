@@ -1,5 +1,4 @@
 # File-Handling-Using-C
-# File Handling
 A file represents a sequence of bytes on the disk where a group of related data is stored. File is
 created for permanent storage of data. It is a ready made structure. 
 <br>In C language, we use a structure pointer of file type to declare a file.
@@ -22,9 +21,9 @@ Function &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;description<br>
 ***
 
 Opening a File or Creating a File<br>
-The fopen() function is used to create a new file or to open an existing file.<br>
+The **fopen()** function is used to create a new file or to open an existing file.<br>
 ### General Syntax:<br>
-*fp = FILE *fopen(const char *filename, const char *mode);<br>
+***fp = FILE *fopen(const char *filename, const char *mode);<br>**
 Here, *fp is the FILE pointer (FILE *fp), which will hold the reference to the opened(or created) file.<br>
 
 **filename** is the name of the file to be opened and **mode** specifies the purpose of opening the file.

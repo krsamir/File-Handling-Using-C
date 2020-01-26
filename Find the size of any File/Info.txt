@@ -1,0 +1,3 @@
+We will be using fseek() and ftell() functions to find the size of the file. There are others
+ways to find the file size as well, like looping on the whole content of file and finding out the size,
+but the File Handling functions makes it a lot easier.

@@ -2,6 +2,7 @@
 #include<dirent.h>
 
 void main(){
+    /*dirent.h header file containms variables and functions related to directory streams.*/
     DIR *d;
     struct dirent *dir;
     d = opendir(".");
